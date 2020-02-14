@@ -104,8 +104,8 @@ func main() {
 func generateTsxFromTemplate(path, name string) {
 	generateDir(path + name)
 	data := struct{ Name string }{Name: name}
-	generateFromTemplate(pathToComponents+"/"+name+".tsx", "componentTemplate", componentTemplate, data)
-	generateFromString(pathToComponents+"/"+name+"Style.tsx", styleTemplate)
+	generateFromTemplate(path+name+".tsx", "componentTemplate", componentTemplate, data)
+	generateFromString(path+name+"Style.tsx", styleTemplate)
 }
 
 // generateDir creates a directory and all the parents
