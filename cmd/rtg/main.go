@@ -36,7 +36,7 @@ var log = Logger{
 		fmt.Printf(msg, args...)
 		color.Unset()
 		fmt.Println("\nIf you feel like you need a refresh, try running rtg --help to read the usage notes.")
-		fmt.Println("If the error is something unexpected, please open an issue on CanobbioE/template-generator.")
+		fmt.Println("If the error is something unexpected, please open an issue on CanobbioE/react-template-generator/issues.")
 		os.Exit(1)
 	},
 	Infof: func(msg string, args ...interface{}) {
