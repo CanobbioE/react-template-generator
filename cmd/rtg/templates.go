@@ -10,7 +10,7 @@ interface {{.Name}}Props {
 }
 
 const {{.Name}} = (props: {{.Name}}Props) => {
-  (
+  return (
     <View>
       <Text>Hello World!</Text>
     </View>

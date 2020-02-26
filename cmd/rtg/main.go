@@ -102,16 +102,17 @@ func main() {
 // and "<name>Style.tsx" inside the "./components/<name>/" folder.
 // It works even if name is a path.
 func generateTsxFromTemplate(path, name string) {
-	generateDir(path + name)
+	fullpath := path + name + "/" + filepath.Base(name)
+	generateDir(fullpath)
 	data := struct{ Name string }{Name: name}
-	generateFromTemplate(path+name+".tsx", "componentTemplate", componentTemplate, data)
-	generateFromString(path+name+"Style.tsx", styleTemplate)
+	generateFromTemplate(fullpath+".tsx", "componentTemplate", componentTemplate, data)
+	generateFromString(fullpath+"Styles.tsx", styleTemplate)
 }
 
 // generateDir creates a directory and all the parents
 // directories that do not exist.
 func generateDir(path string) {
-	path = filepath.FromSlash(path)
+	path = filepath.FromSlash(filepath.Dir(path))
 	err := os.MkdirAll(path, os.ModePerm)
 	if err != nil {
 		log.Fatalf("Error: cannot create resource %s.\n"+
