@@ -23,7 +23,7 @@ Options:
 Example:
 	rtg -g c MyComponent
 	   Created ./components/MyComponent/MyComponent.tsx
-	   Created ./components/MyComponent/MyComponentStyle.tsx
+	   Created ./components/MyComponent/MyComponentStyles.tsx
 `
 
 const pathToComponents = "./components/"
